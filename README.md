@@ -13,7 +13,8 @@ cookie一般不超过4kb，由一个名称、一个值和其他几个用于控�
 # Cookie的属性
 
 我们打开谷歌浏览器 开发者工具(F12) > Application > Cookies > 当前url 可以看到，cookie的属性有
-  | Name
+ 
+| Name
 | Value
 | Domain
 | Path
@@ -23,13 +24,20 @@ cookie一般不超过4kb，由一个名称、一个值和其他几个用于控�
 | Secure
 | SameSite
 
-**Name/Value** —— 顾名思义就是一个键值对的概念，可以通过Name来得到cookie的value值。
+**Name/Value**
 
-**Expires** —— 用于设置Cookie的过期时间，比如：
+顾名思义就是一个键值对的概念，可以通过Name来得到cookie的value值。
+
+**Expires**
+
+用于设置Cookie的过期时间，比如：
+
 Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT;
+
 当Expires属性缺省时会默认为session，表示这是会话性cookie，值保存在客户端内存中，当浏览器关闭的时候会失效。
 
 Max-Age —— 用于设置在Cookie失效之前需要经过的秒数，比如：
+
 Set-Cookie: id=a3fWa; Max-Age=10; // 该cookie将在10s后失效
 
 Max-Age的值可以为正数、负数、0。
@@ -40,4 +48,4 @@ Max-Age优先级高于Expires
 
 **Domain**
 
-Domain指定Cookie可以送达的主机名，默认值是当前url中的主机名，如果有一个域名m.com，如果在a.m.com域名下设置一个cookie，tooken=123；如果不设值domain属性值，该Cookie是只能送达到当前主机名，如果将domain设置为m.com
+Domain指定Cookie可以送达的主机名，默认值是当前url中的主机名，如果有一个域名m.com，如果在a.m.com域名下设置一个cookie，tooken=123；如果不设值domain属性值，该Cookie是只能送达到当前主机名，如果将domain设置为m.com。那么在m.com的二级域名下都能够拿到token值，如（a.m.com、b.m.com、*.m.cm）；
